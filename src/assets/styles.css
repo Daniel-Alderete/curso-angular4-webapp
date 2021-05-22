@@ -56,6 +56,12 @@
   background: rgba(224, 49, 55, 0.67);
 }
 
+.activated {
+  text-decoration: none !important;
+  background: rgba(224, 49, 55, 0.67) !important;
+  border-bottom: 4px solid yellow !important;
+}
+
 #footer {
   margin-top: 30px;
   padding-top: 10px;

@@ -6,9 +6,15 @@ import { AppComponent } from './app.component';
 import { appRoutingProviders, routing } from './app.routing';
 import { ErrorComponent } from './components/error.component';
 import { HomeComponent } from './components/home.component';
+import { PorductsListComponent } from './components/products-list.component';
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, ErrorComponent],
+  declarations: [
+    AppComponent,
+    HomeComponent,
+    ErrorComponent,
+    PorductsListComponent,
+  ],
   imports: [BrowserModule, AppRoutingModule, routing],
   providers: [appRoutingProviders],
   bootstrap: [AppComponent],
