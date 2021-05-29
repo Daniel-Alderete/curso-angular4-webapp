@@ -12,7 +12,6 @@ export class ProductAddComponent {
   public title: string;
   public product: Product;
   public filesToUpload: Array<File>;
-  //public resultUpload;
 
   constructor(
     private _productService: ProductService,
