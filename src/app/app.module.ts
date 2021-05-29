@@ -1,3 +1,4 @@
+import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -15,7 +16,7 @@ import { PorductsListComponent } from './components/products-list.component';
     ErrorComponent,
     PorductsListComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, routing],
+  imports: [BrowserModule, AppRoutingModule, routing, HttpClientModule],
   providers: [appRoutingProviders],
   bootstrap: [AppComponent],
 })
