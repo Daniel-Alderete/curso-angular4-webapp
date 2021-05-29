@@ -8,7 +8,7 @@ import { ProductService } from '../services/product.service';
   templateUrl: '../views/products-list.html',
   providers: [ProductService],
 })
-export class PorductsListComponent {
+export class ProductsListComponent {
   public title: string;
   public products: Product[];
 

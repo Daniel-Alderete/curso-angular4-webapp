@@ -1,6 +1,6 @@
 import { Product } from './product';
 
-export class ProductsResponse {
+export class ProductsListResponse {
   constructor(
     public status: string,
     public code: number,

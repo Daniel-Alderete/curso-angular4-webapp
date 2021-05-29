@@ -76,3 +76,8 @@
   border-radius: 5px;
   background: #eee;
 }
+
+#form-product label {
+  margin-top: 10px;
+  margin-left: 10px;
+}
