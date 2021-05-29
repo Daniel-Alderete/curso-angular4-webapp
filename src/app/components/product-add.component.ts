@@ -11,6 +11,8 @@ import { ProductService } from '../services/product.service';
 export class ProductAddComponent {
   public title: string;
   public product: Product;
+  public filesToUpload: Array<File>;
+  //public resultUpload;
 
   constructor(
     private _productService: ProductService,
@@ -19,6 +21,7 @@ export class ProductAddComponent {
   ) {
     this.title = 'Add a new Product';
     this.product = new Product(0, '', '', 0, '');
+    this.filesToUpload = new Array();
   }
 
   ngOnInit() {
@@ -28,6 +31,24 @@ export class ProductAddComponent {
   onSubmit() {
     console.log(this.product);
 
+    if (this.filesToUpload.length >= 1) {
+      this._productService.doFileRequest([], this.filesToUpload).then(
+        (result) => {
+          console.log(result);
+
+          this.product.image = result.filename;
+          this.addProduct();
+        },
+        (error) => {
+          console.log(<any>error);
+        }
+      );
+    } else {
+      this.addProduct();
+    }
+  }
+
+  addProduct() {
     this._productService.addProduct(this.product).subscribe(
       (result) => {
         if (result.code != 201) {
@@ -40,5 +61,10 @@ export class ProductAddComponent {
         console.log(<any>error);
       }
     );
+  }
+
+  fileChangeEvent(fileInput: any) {
+    this.filesToUpload = <Array<File>>fileInput.target.files;
+    console.log(this.filesToUpload);
   }
 }
