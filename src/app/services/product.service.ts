@@ -5,6 +5,7 @@ import { ProductsListResponse } from '../models/products-list.response';
 import { Product } from '../models/product';
 import { ProductAddResponse } from '../models/product-add.response';
 import { UploadImageResponse } from '../models/upload-image.response';
+import { ProductDetailResponse } from '../models/product-detail.response';
 
 @Injectable()
 export class ProductService {
@@ -16,6 +17,10 @@ export class ProductService {
 
   getProducts() {
     return this._http.get<ProductsListResponse>(this.url + 'products');
+  }
+
+  getProduct(id: number) {
+    return this._http.get<ProductDetailResponse>(this.url + 'products/' + id);
   }
 
   addProduct(product: Product) {
