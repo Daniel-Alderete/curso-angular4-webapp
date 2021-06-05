@@ -56,6 +56,12 @@
   />
 
   <label>Image</label>
+  <div *ngIf="isEdit">
+    <img
+      src="http://localhost/curso-angular4-backend/uploads/{{product.image}}"
+      width="80%"
+    />
+  </div>
   <input type="file" class="form-control" (change)="fileChangeEvent($event)" />
 
   <input

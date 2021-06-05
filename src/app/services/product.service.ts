@@ -35,6 +35,20 @@ export class ProductService {
     });
   }
 
+  editProduct(product: Product) {
+    let json = JSON.stringify(product);
+    let params = 'json=' + json;
+    let headers = new HttpHeaders({
+      'Content-Type': 'application/x-www-form-urlencoded',
+    });
+
+    return this._http.put<ProductAddResponse>(
+      this.url + 'products/' + product.id,
+      params,
+      { headers: headers }
+    );
+  }
+
   doFileRequest(
     params_: Array<string>,
     files: Array<File>

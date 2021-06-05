@@ -12,6 +12,7 @@ export class ProductAddComponent {
   public title: string;
   public product: Product;
   public filesToUpload: Array<File>;
+  public isEdit: boolean = false;
 
   constructor(
     private _productService: ProductService,

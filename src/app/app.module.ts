@@ -9,7 +9,8 @@ import { appRoutingProviders, routing } from './app.routing';
 import { ErrorComponent } from './components/error.component';
 import { HomeComponent } from './components/home.component';
 import { ProductAddComponent } from './components/product-add.component';
-import { ProductDetail } from './components/product-detail.component';
+import { ProductDetailComponent } from './components/product-detail.component';
+import { ProductEditComponent } from './components/product-edit.component';
 import { ProductsListComponent } from './components/products-list.component';
 
 @NgModule({
@@ -19,7 +20,8 @@ import { ProductsListComponent } from './components/products-list.component';
     ErrorComponent,
     ProductsListComponent,
     ProductAddComponent,
-    ProductDetail,
+    ProductDetailComponent,
+    ProductEditComponent,
   ],
   imports: [
     BrowserModule,

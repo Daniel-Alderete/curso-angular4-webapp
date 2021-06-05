@@ -8,7 +8,7 @@ import { ProductService } from '../services/product.service';
   templateUrl: '../views/product-detail.html',
   providers: [ProductService],
 })
-export class ProductDetail {
+export class ProductDetailComponent {
   public product: Product;
 
   constructor(
