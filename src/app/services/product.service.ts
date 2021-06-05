@@ -3,7 +3,7 @@ import { GLOBAL } from './global';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { ProductsListResponse } from '../models/products-list.response';
 import { Product } from '../models/product';
-import { ProductAddResponse } from '../models/product-add.response';
+import { ProductRestResponse } from '../models/product-rest.response';
 import { UploadImageResponse } from '../models/upload-image.response';
 import { ProductDetailResponse } from '../models/product-detail.response';
 
@@ -30,7 +30,7 @@ export class ProductService {
       'Content-Type': 'application/x-www-form-urlencoded',
     });
 
-    return this._http.post<ProductAddResponse>(this.url + 'products', params, {
+    return this._http.post<ProductRestResponse>(this.url + 'products', params, {
       headers: headers,
     });
   }
@@ -42,11 +42,15 @@ export class ProductService {
       'Content-Type': 'application/x-www-form-urlencoded',
     });
 
-    return this._http.put<ProductAddResponse>(
+    return this._http.put<ProductRestResponse>(
       this.url + 'products/' + product.id,
       params,
       { headers: headers }
     );
+  }
+
+  deleteProduct(id: number) {
+    return this._http.delete<ProductRestResponse>(this.url + 'products/' + id);
   }
 
   doFileRequest(

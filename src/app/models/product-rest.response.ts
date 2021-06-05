@@ -1,4 +1,4 @@
-export class ProductAddResponse {
+export class ProductRestResponse {
   constructor(
     public status: string,
     public code: number,
